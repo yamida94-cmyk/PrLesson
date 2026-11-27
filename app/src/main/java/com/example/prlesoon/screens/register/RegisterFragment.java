@@ -40,7 +40,7 @@ public class RegisterFragment extends BaseFragment<RegisterViewModel> {
     @NonNull
     @Override
     protected String getTitle() {
-        return "";
+        return "Register";
     }
 
 

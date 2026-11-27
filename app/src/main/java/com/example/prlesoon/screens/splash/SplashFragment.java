@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.prlesoon.R;
 import com.example.prlesoon.core.BaseFragment;
+import com.example.prlesoon.screens.landing.LandingFragment;
 
 public class SplashFragment extends BaseFragment<SplashViewModel>
 {
@@ -29,12 +30,14 @@ public class SplashFragment extends BaseFragment<SplashViewModel>
         super.onViewCreated(view , savedInstanceState);
         viewModel = getViewModel(SplashViewModel.class);
         // TODO: Use the ViewModel
+
+        this.navigationHost.navigateTo(LandingFragment.newInstance() , false);
     }
 
     @NonNull
     @Override
     protected String getTitle() {
-        return "Splash";
+        return "";
     }
 
     @Override

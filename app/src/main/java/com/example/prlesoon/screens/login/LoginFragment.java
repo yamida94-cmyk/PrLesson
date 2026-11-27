@@ -40,7 +40,7 @@ public class LoginFragment extends BaseFragment<LoginViewModel> {
     @NonNull
     @Override
     protected String getTitle() {
-        return "";
+        return "Login";
     }
 
 

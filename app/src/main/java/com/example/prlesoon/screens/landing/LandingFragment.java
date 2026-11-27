@@ -8,12 +8,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
 import com.example.prlesoon.R;
 import com.example.prlesoon.core.BaseFragment;
+import com.example.prlesoon.screens.login.LoginFragment;
+import com.example.prlesoon.screens.register.RegisterFragment;
 import com.example.prlesoon.screens.splash.SplashViewModel;
 
 public class LandingFragment extends BaseFragment<LandingViewModel> {
 
+    Button btnToLogin , btnToRegister;
     public static LandingFragment newInstance() {
         return new LandingFragment();
     }
@@ -31,6 +36,21 @@ public class LandingFragment extends BaseFragment<LandingViewModel> {
         super.onViewCreated(view , savedInstanceState);
         viewModel = getViewModel(LandingViewModel.class);
         // TODO: Use the ViewModel
+        btnToLogin = view.findViewById(R.id.btn_landing_to_login);
+        btnToRegister = view.findViewById(R.id.btn_landing_to_register);
+
+        btnToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigationHost.navigateTo(LoginFragment.newInstance(),true);
+            }
+        });
+        btnToRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigationHost.navigateTo(RegisterFragment.newInstance(),true);
+            }
+        });
     }
 
     @NonNull
