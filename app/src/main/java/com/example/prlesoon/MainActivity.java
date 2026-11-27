@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.prlesoon.core.NavigationHost;
+import com.example.prlesoon.screens.splash.SplashFragment;
 
 
 /**
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost {
         // If it is not null, Android is recreating the Activity (e.g., after a screen rotation),
         // and the system will automatically restore the previously active fragment.
         if (savedInstanceState == null) {
-            navigateTo(new SplashFragment(), false);
+            navigateTo(SplashFragment.newInstance(), false);
 
         }
     }
